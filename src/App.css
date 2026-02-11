@@ -1,0 +1,135 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* Orders page – student form card */
+.orders-form-card {
+  max-width: 600px;
+  margin: 0 auto 24px;
+  padding: 24px 24px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.orders-form-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.orders-form-group {
+  margin-bottom: 10px;
+}
+
+.orders-form-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: #444;
+}
+
+.orders-form-input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.orders-form-input:focus {
+  outline: none;
+  border-color: #2f6b2f;
+  box-shadow: 0 0 0 1px #2f6b2f20;
+}
+
+/* Submit button centered under form */
+.orders-submit-row {
+  text-align: center;
+  margin-top: 14px;
+}
+
+.login-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  width: 320px;
+  background: #ffffff;
+  padding: 20px 24px 24px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.login-label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #2f6b2f;
+  box-shadow: 0 0 0 1px #2f6b2f20;
+}
+
+.login-error {
+  color: #b00020;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
