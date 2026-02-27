@@ -1,5 +1,6 @@
 // src/pages/Login.jsx
 import { useState } from "react";
+import { API_BASE } from "../api";
 
 function Login({ onLogin }) {
   const [form, setForm] = useState({ username: "", password: "" });
@@ -15,7 +16,7 @@ function Login({ onLogin }) {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/login", {
+      const res = await fetch(`${API_BASE}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -68,7 +69,11 @@ function Login({ onLogin }) {
           />
         </label>
 
-        <button type="submit" className="btn-primary" style={{ width: "100%", marginTop: "12px" }}>
+        <button
+          type="submit"
+          className="btn-primary"
+          style={{ width: "100%", marginTop: "12px" }}
+        >
           Log in
         </button>
       </form>
@@ -77,3 +82,4 @@ function Login({ onLogin }) {
 }
 
 export default Login;
+

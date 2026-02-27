@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import { Link, Routes, Route } from "react-router-dom";
+import { API_BASE } from "./api";
 
 import Home from "./pages/Home.jsx";
 import Menu from "./pages/Menu.jsx";
@@ -21,7 +22,7 @@ function App() {
   useEffect(() => {
     const loadOrders = async () => {
       try {
-        const res = await fetch("http://localhost:5000/orders");
+        const res = await fetch(`${API_BASE}/orders`);
         const data = await res.json();
         setOrders(data);
       } catch (err) {
@@ -52,7 +53,7 @@ function App() {
 
   const handleMarkCompletedInApp = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/orders/${id}`, {
+      const res = await fetch(`${API_BASE}/orders/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: "completed" }),
@@ -139,6 +140,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

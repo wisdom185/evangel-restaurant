@@ -1,5 +1,6 @@
 // src/pages/Orders.jsx
 import { useState } from "react";
+import { API_BASE } from "../api";
 
 function Orders({ cartItems, onSubmitOrder }) {
   const [student, setStudent] = useState({
@@ -32,7 +33,7 @@ function Orders({ cartItems, onSubmitOrder }) {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/orders", {
+      const res = await fetch(`${API_BASE}/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(order),
@@ -152,7 +153,8 @@ function Orders({ cartItems, onSubmitOrder }) {
                 Qty: {item.quantity} × ₦{item.price.toLocaleString()}
               </p>
               <p className="region-desc">
-                Subtotal: ₦{(item.price * item.quantity).toLocaleString()}
+                Subtotal: ₦
+                {(item.price * item.quantity).toLocaleString()}
               </p>
             </div>
           </article>
@@ -167,6 +169,7 @@ function Orders({ cartItems, onSubmitOrder }) {
 }
 
 export default Orders;
+
 
 
 
